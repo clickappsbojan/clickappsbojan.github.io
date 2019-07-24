@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>FlightAvail - My Docs</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../..">My Docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../../..">Flight certification tests</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Flights <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../BookingChater/">FlightAvail</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">OneWay</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../OneWay/WithTwoAdults/">FlightAvail</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Roundtrip</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../OneAdultWithResidentDiscount/">FlightAvail</a>
+</li>
+            
+<li class="active">
+    <a href="./">FlightAvail</a>
+</li>
+            
+<li >
+    <a href="../TwoAdultsAndOneBaby/">FlightAvail</a>
+</li>
+            
+<li >
+    <a href="../TwoAdultsAndTwoBaby/">FlightAvail</a>
+</li>
+            
+<li >
+    <a href="../WithExtraStop/">FlightAvail</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../OneAdultWithResidentDiscount/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../TwoAdultsAndOneBaby/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#flightavail">FlightAvail</a></li>
+            <li><a href="#request">Request</a></li>
+            <li><a href="#response">Response</a></li>
+        <li class="main "><a href="#flightcheckavail-if-applicable">FlightCheckAvail (if applicable)</a></li>
+            <li><a href="#request_1">Request</a></li>
+            <li><a href="#response_1">Response</a></li>
+        <li class="main "><a href="#flightbookingrules">FlightBookingRules</a></li>
+            <li><a href="#request_2">Request</a></li>
+            <li><a href="#response_2">Response</a></li>
+        <li class="main "><a href="#flightbooking">FlightBooking</a></li>
+            <li><a href="#request_3">Request</a></li>
+            <li><a href="#response_3">Response</a></li>
+        <li class="main "><a href="#flightticketing">FlightTicketing</a></li>
+            <li><a href="#request_4">Request</a></li>
+            <li><a href="#response_4">Response</a></li>
+        <li class="main "><a href="#readbooking">ReadBooking</a></li>
+            <li><a href="#request_5">Request</a></li>
+            <li><a href="#response_5">Response</a></li>
+        <li class="main "><a href="#cancelbooking">CancelBooking</a></li>
+            <li><a href="#request_6">Request</a></li>
+            <li><a href="#response_6">Response</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="flightavail">FlightAvail</h1>
+<h3 id="request">Request</h3>
+<pre><code>&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns=&quot;http://www.juniper.es/webservice/2007/&quot;&gt;
+    &lt;soap:Header/&gt;
+    &lt;soap:Body&gt;
+        &lt;FlightAvail&gt;
+            &lt;FlightAvailRQ Version=&quot;1.1&quot; Language=&quot;en&quot;&gt;
+                &lt;Login Password=&quot;56pEh6uT&quot; Email=&quot;TestXMLClickapps&quot;/&gt;
+
+                &lt;Paxes&gt;
+
+                    &lt;Pax IdPax=&quot;1&quot;&gt;
+                        &lt;Age&gt;28&lt;/Age&gt;
+                    &lt;/Pax&gt;
+
+                    &lt;Pax IdPax=&quot;2&quot;&gt;
+                        &lt;Age&gt;28&lt;/Age&gt;
+                    &lt;/Pax&gt;
+                &lt;/Paxes&gt;
+
+                &lt;FlightRequest&gt;
+                    &lt;SearchSegmentsFlight&gt;
+                        &lt;SearchSegmentFlight&gt;
+
+                            &lt;CountryOfResidence&gt;SA&lt;/CountryOfResidence&gt;
+                            &lt;Routes&gt;
+                                &lt;Route Origin=&quot;39681&quot; Destination=&quot;37786&quot; Date=&quot;2019-10-16&quot;/&gt;
+                                &lt;Route Origin=&quot;37786&quot; Destination=&quot;39681&quot; Date=&quot;2019-10-16&quot;/&gt;
+                            &lt;/Routes&gt;
+                        &lt;/SearchSegmentFlight&gt;
+                    &lt;/SearchSegmentsFlight&gt;
+                    &lt;RelPaxesDist&gt;
+                        &lt;RelPaxDist&gt;
+                            &lt;RelPaxes&gt;
+                                &lt;RelPax IdPax=&quot;1&quot;/&gt;
+                                &lt;RelPax IdPax=&quot;2&quot;/&gt;
+                            &lt;/RelPaxes&gt;
+                        &lt;/RelPaxDist&gt;
+                    &lt;/RelPaxesDist&gt;
+                &lt;/FlightRequest&gt;
+                &lt;AdvancedOptions&gt;
+                    &lt;CalendarSearch&gt;true&lt;/CalendarSearch&gt;
+                    &lt;ShowBreakdownPrice&gt;true&lt;/ShowBreakdownPrice&gt;
+                    &lt;UseCurrency&gt;USD&lt;/UseCurrency&gt;
+                &lt;/AdvancedOptions&gt;
+            &lt;/FlightAvailRQ&gt;
+        &lt;/FlightAvail&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre>
+
+<h3 id="response">Response</h3>
+<pre><code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;soap:Body&gt;
+        &lt;FlightAvailResponse xmlns=&quot;http://www.juniper.es/webservice/2007/&quot;&gt;
+            &lt;AvailabilityRS Url=&quot;http://xml-uat.bookingengine.es&quot; TimeStamp=&quot;2019-07-24T16:32:24.2600276+02:00&quot; IntCode=&quot;ldIoA1cTvSs/aX07fx7NK6WzSYl72PfmbrzQI/1Ayj8=&quot;&gt;
+                &lt;Results&gt;
+                    &lt;FlightResult FareType=&quot;CHA&quot; AvailableSeats=&quot;20&quot; Number=&quot;1&quot; Direction=&quot;Inbound&quot; LowCost=&quot;false&quot; RatePlanCode=&quot;LF6j9ndyo/zlz9tkRLu5T4vcqg4Y3XWeGauWGUmxxJy33kAWihQpwFONCEgQgZ8j3MYnbZCiHJVG3tYrqJx3gJshoeNGijCN4wKm8yPI+Atx2j1gmfEyA+u+xJkFUx6mv3EDM08fGg58yKNPSbfeXTIMMqH2NLlqJkZxNAWnGTz9J7WLZr6qzvfLRspkFdBYTyVc/ByVCezR4T5xbJgVJYXnjtRdXaaGh6J2QmbM+E4csFmmrbSTBdyaANDpcjU8/qyJwZf10lC1VFBacKkaUfRFYb7aXiZggMKURER7L54WUcpq021IAq9nnzIKYCsavyZBfhttJOW1igjSyg5kOoUTiRUFbInVonCXQb9bkM+jjPtH8K9CMvLFicHv6ZBpmyhUtNzeRddhQRxWeNY1YlQUFD1wq4dTWZU1UJq8LI9qfQHXt2xyrE7b6noyT4ZpE6/qjRUwlZHcGo5BQfuNTzl56pz+KcweBfYjbHm1cj7JN53qJiMBQSMrcPFT9dZiusa1Z/4C2hpw+j5UmprIT8AROpr2iRz0um4SbwdFkIZPLSu0dO5WvaYPAJK1X0H3d9m2R9KRFwjxOgf+7dwnjEbJdQxTUHXlN/kXt3Y0x0KwQjyo5Sw0yOXZXqzDoKI40bEr+aMqh/z1IHjS6xyDmLTafUoR/oO6yyl1lWGCU5vIkV8Uyfai6BgZEVk++43pn9Sc0LXq28/kiHVyb0ZedhHgSEqT3K0at+pSChQQ8HPQyfRoctdqO/yxm2Mbpgu/6VsAlH7uFfraIxO7L27A7/J7aHKkeRGIJODNWbyzB39dP0xTLFnDaGff5XeRrp2/pm2v+zj6i7t9eEIo9dI3wMrA4zM76z05Y30rhy6QymalQk0bEdtos82IelPQ82lh/R669cN3NFX1buX+KMFFbroWE6yVc8Zy/FnCgFzFfwvXhgvi02HkRt5ifLFA6z+5I8JTzafgzoVY/uAjCol9hg==&quot; Status=&quot;OK&quot; Source=&quot;ChV2&quot;&gt;
+                        &lt;Routes ValidatingCarrier=&quot;EI&quot;&gt;
+                            &lt;Route Origin=&quot;37786&quot; Destination=&quot;39681&quot;&gt;
+                                &lt;Segments&gt;
+                                    &lt;Segment DepartureAirport=&quot;MAD&quot; ArrivalAirport=&quot;MCO&quot; DepartureDate=&quot;2019-10-16T10:00:00&quot; ArrivalDate=&quot;2019-10-16T17:00:00&quot; OperatingAirline=&quot;EI&quot; MarquetingAirline=&quot;EI&quot; FlightNumber=&quot;1234&quot; JourneyDuration=&quot;P0DT7H0M0S&quot; GroundDuration=&quot;P0DT7H0M0S&quot; Class=&quot;B&quot; Cabin=&quot;Y&quot; FareBasis=&quot;200&quot; /&gt;
+                                &lt;/Segments&gt;
+                            &lt;/Route&gt;
+                        &lt;/Routes&gt;
+                        &lt;Prices&gt;
+                            &lt;Price Type=&quot;S&quot; Currency=&quot;USD&quot;&gt;
+                                &lt;TotalFixAmounts Gross=&quot;105.26&quot; Nett=&quot;105.26&quot;&gt;
+                                    &lt;Service Amount=&quot;105.26&quot; /&gt;
+                                &lt;/TotalFixAmounts&gt;
+                                &lt;Breakdown&gt;
+                                    &lt;Concepts&gt;
+                                        &lt;Concept Type=&quot;BAS&quot; Name=&quot;Base Coste&quot;&gt;
+                                            &lt;Items&gt;
+                                                &lt;Item Amount=&quot;52.63&quot; Date=&quot;0001-01-01&quot; Quantity=&quot;1&quot; Days=&quot;1&quot; PaxType=&quot;ADT&quot; TtaCode=&quot;200&quot; /&gt;
+                                            &lt;/Items&gt;
+                                        &lt;/Concept&gt;
+                                        &lt;Concept Type=&quot;BAS&quot; Name=&quot;Base Coste&quot;&gt;
+                                            &lt;Items&gt;
+                                                &lt;Item Amount=&quot;52.63&quot; Date=&quot;0001-01-01&quot; Quantity=&quot;1&quot; Days=&quot;1&quot; PaxType=&quot;ADT&quot; TtaCode=&quot;201&quot; /&gt;
+                                            &lt;/Items&gt;
+                                        &lt;/Concept&gt;
+                                    &lt;/Concepts&gt;
+                                &lt;/Breakdown&gt;
+                            &lt;/Price&gt;
+                        &lt;/Prices&gt;
+                    &lt;/FlightResult&gt;
+                    &lt;FlightResult FareType=&quot;PUB&quot; AvailableSeats=&quot;7&quot; Number=&quot;73&quot; Direction=&quot;Outbound&quot; LowCost=&quot;false&quot; RatePlanCode=&quot;yuNWU8Rez1mhN8F02g3W2IsUx7jLMkUloCyKG9cHjhkmBeb1H1TKRI1r+4gsiP82u5FT/XX3hzyqFFwwowg3CQpScS/2026puSf+hI/iAplkOj/rEPXy09TX/hL7J455T3BrL6pmNuWVfAXdBvRFqNFpMwCA34L2qmKI5/kIdx+W6U6/+md6OfGhJJUoc9Axw7I7REXXWkZmjDW6VAuS1vqxDrQr3uQc/PbbmOb3Qzdd9q/eHkbRhWoWG1a/KPYKi7RLx1PMqlSvW1L9hak+DoF+44kD/dAmlQbRViMIF0esRpsFPySchxARSoIjMvwYiI3odZOydPWT6BKbmL4fVs2AewgsTIpHqzt/7I48wjs9YlOjYaC2/TpmL4DAM4ZriMxPB1XxzaZlG8slLJ9ltCuneFlKZsZ97PqJWGIEUIS1PV3++InY34wHn+h1uKzxt8BWYcmyhCCFdpfTid0AraMyow0guUgOW+7lIeuhXBmFK7cvzIxRanDP+cPvPxN905gOKu//jYIxwQBw7hjIUlk4iBC9Iok9LI1HTKIKFv+/dA6GISHj9VnTd2iIR6OTAPV8H+8D34SbNH9puKkfJ7EWgPFwKG6fu5OnT+mRsUlRoLulUGVmpZVzRpgBh33CIR9AGIMUH2TndY2rF3fp+vtiKKX3s+aLRdSEZHbcXpsfF3ZfVKuVFhf8ADCln7K8CAW5PKdbXgR1LIqlm13eNtSuSvrH/GfrtWTmqlqAD1iNYmLTI7ZsBF9G9OiKpKsv6SgeQt9n5Km1yXRPjYgO7h5OYpd7vbs5k2uqib83ioYx0RQTzw6DHiqUeeHozcfidYX5JmLHEoNP4Ns+0jpXO/FuF64yvbuTE887ky+EtG+yGwTsTlXnCFkIlY/L4dTA/8AvkNeSRoUBD9PL7sDOLNdTsYTVxoZQizlFC4KCC00lkkR4D42Cw4yAo74KB/yu4I0KPSCflF4DGQsXHNd0L6drGj46e9g6FbSYgnIbLkhUAyUzYOUjy+3n2MPv1+IGy4RqgMFV1UZy6HBCsMon6zJrayKPlgH4Zp3qQovNQjdOySuQnT5T+0D9jI6UOdfqt+58rxYHrRFhIIsVyeOoIAt5vvdVXdcK9MMmfl18dLMJdz2h//Xl7fAcPxmrwd/TuXPnckkUiBR+WKSyIeQNKNCNH4W7ZxkO5NDeCQ3pk5oxfUHZ8XKBWW7dLfAqknI88B8TDDuwLqPIa6913Ip+ajPTwn6pHxdow6Igwfnzdpb5ZOjBSmye7vcsdsD9NQiE1J189WAV06Ho2oc7aQF1wKEdVd5bolaHG++ZVEKCgg/1S4nH8zmd9kZRZGdboIJ4&quot; Status=&quot;OK&quot; Source=&quot;Amad&quot;&gt;
+                        &lt;Routes ValidatingCarrier=&quot;AM&quot;&gt;
+                            &lt;Route Origin=&quot;39681&quot; Destination=&quot;37786&quot;&gt;
+                                &lt;Segments&gt;
+                                    &lt;Segment DepartureAirport=&quot;MCO&quot; ArrivalAirport=&quot;MEX&quot; DepartureDate=&quot;2019-10-16T14:40:00&quot; ArrivalDate=&quot;2019-10-16T17:35:00&quot; OperatingAirline=&quot;AM&quot; MarquetingAirline=&quot;AM&quot; FlightNumber=&quot;435&quot; JourneyDuration=&quot;P0DT21H15M0S&quot; Class=&quot;H&quot; Cabin=&quot;Y&quot; AirplaneType=&quot;7S8&quot; FareBasis=&quot;HKNN0XCB&quot; /&gt;
+                                    &lt;Segment DepartureAirport=&quot;MEX&quot; ArrivalAirport=&quot;MAD&quot; DepartureDate=&quot;2019-10-16T23:55:00&quot; ArrivalDate=&quot;2019-10-17T17:55:00&quot; OperatingAirline=&quot;AM&quot; MarquetingAirline=&quot;AM&quot; FlightNumber=&quot;21&quot; JourneyDuration=&quot;P0DT21H15M0S&quot; Class=&quot;H&quot; Cabin=&quot;Y&quot; AirplaneType=&quot;789&quot; FareBasis=&quot;HKNN0XCB&quot; /&gt;
+                                &lt;/Segments&gt;
+                            &lt;/Route&gt;
+                        &lt;/Routes&gt;
+                        &lt;Prices&gt;
+                            &lt;Price Type=&quot;S&quot; Currency=&quot;USD&quot;&gt;
+                                &lt;TotalFixAmounts Gross=&quot;6462.08&quot; Nett=&quot;6462.08&quot;&gt;
+                                    &lt;Service Amount=&quot;6405.1&quot; /&gt;
+                                    &lt;ServiceTaxes Included=&quot;false&quot; Amount=&quot;56.98&quot; /&gt;
+                                &lt;/TotalFixAmounts&gt;
+                                &lt;Breakdown&gt;
+                                    &lt;Concepts&gt;
+                                        &lt;Concept Type=&quot;BAS&quot; Name=&quot;Base Coste&quot;&gt;
+                                            &lt;Items&gt;
+                                                &lt;Item Amount=&quot;3202.55&quot; Date=&quot;0001-01-01&quot; Quantity=&quot;1&quot; Days=&quot;1&quot; PaxType=&quot;ADT&quot; TtaCode=&quot;200&quot; /&gt;
+                                            &lt;/Items&gt;
+                                        &lt;/Concept&gt;
+                                        &lt;Concept Type=&quot;BAS&quot; Name=&quot;Base Coste&quot;&gt;
+                                            &lt;Items&gt;
+                                                &lt;Item Amount=&quot;3202.55&quot; Date=&quot;0001-01-01&quot; Quantity=&quot;1&quot; Days=&quot;1&quot; PaxType=&quot;ADT&quot; TtaCode=&quot;201&quot; /&gt;
+                                            &lt;/Items&gt;
+                                        &lt;/Concept&gt;
+                                    &lt;/Concepts&gt;
+                                    &lt;Taxes&gt;
+                                        &lt;Tax Name=&quot;Tasas Others&quot; Value=&quot;28.49&quot; IsFix=&quot;true&quot; ByNight=&quot;false&quot; Commissionable=&quot;false&quot; Included=&quot;false&quot;&gt;
+                                            &lt;TtaCodes&gt;
+                                                &lt;TtaCode&gt;200&lt;/TtaCode&gt;
+                                            &lt;/TtaCodes&gt;
+                                            &lt;Total Base=&quot;6405.1&quot; Amount=&quot;28.49&quot; /&gt;
+                                        &lt;/Tax&gt;
+                                        &lt;Tax Name=&quot;ServiceFee&quot; Value=&quot;0&quot; IsFix=&quot;true&quot; ByNight=&quot;false&quot; Commissionable=&quot;false&quot; Included=&quot;false&quot;&gt;
+                                            &lt;TtaCodes&gt;
+                                                &lt;TtaCode&gt;200&lt;/TtaCode&gt;
+                                            &lt;/TtaCodes&gt;
+                                            &lt;Total Base=&quot;6405.1&quot; Amount=&quot;0&quot; /&gt;
+                                        &lt;/Tax&gt;
+                                        &lt;Tax Name=&quot;ServiceFeeIVA&quot; Value=&quot;0&quot; IsFix=&quot;true&quot; ByNight=&quot;false&quot; Commissionable=&quot;false&quot; Included=&quot;false&quot;&gt;
+                                            &lt;TtaCodes&gt;
+                                                &lt;TtaCode&gt;200&lt;/TtaCode&gt;
+                                            &lt;/TtaCodes&gt;
+                                            &lt;Total Base=&quot;6405.1&quot; Amount=&quot;0&quot; /&gt;
+                                        &lt;/Tax&gt;
+                                        &lt;Tax Name=&quot;Tasas Others&quot; Value=&quot;28.49&quot; IsFix=&quot;true&quot; ByNight=&quot;false&quot; Commissionable=&quot;false&quot; Included=&quot;false&quot;&gt;
+                                            &lt;TtaCodes&gt;
+                                                &lt;TtaCode&gt;201&lt;/TtaCode&gt;
+                                            &lt;/TtaCodes&gt;
+                                            &lt;Total Base=&quot;6405.1&quot; Amount=&quot;28.49&quot; /&gt;
+                                        &lt;/Tax&gt;
+                                        &lt;Tax Name=&quot;ServiceFee&quot; Value=&quot;0&quot; IsFix=&quot;true&quot; ByNight=&quot;false&quot; Commissionable=&quot;false&quot; Included=&quot;false&quot;&gt;
+                                            &lt;TtaCodes&gt;
+                                                &lt;TtaCode&gt;201&lt;/TtaCode&gt;
+                                            &lt;/TtaCodes&gt;
+                                            &lt;Total Base=&quot;6405.1&quot; Amount=&quot;0&quot; /&gt;
+                                        &lt;/Tax&gt;
+                                        &lt;Tax Name=&quot;ServiceFeeIVA&quot; Value=&quot;0&quot; IsFix=&quot;true&quot; ByNight=&quot;false&quot; Commissionable=&quot;false&quot; Included=&quot;false&quot;&gt;
+                                            &lt;TtaCodes&gt;
+                                                &lt;TtaCode&gt;201&lt;/TtaCode&gt;
+                                            &lt;/TtaCodes&gt;
+                                            &lt;Total Base=&quot;6405.1&quot; Amount=&quot;0&quot; /&gt;
+                                        &lt;/Tax&gt;
+                                    &lt;/Taxes&gt;
+                                &lt;/Breakdown&gt;
+                            &lt;/Price&gt;
+                        &lt;/Prices&gt;
+                        &lt;AdditionalElements&gt;
+                            &lt;Bags&gt;
+                                &lt;Bag BaggageType=&quot;holdBaggage&quot; Quantity=&quot;1&quot; /&gt;
+                            &lt;/Bags&gt;
+                        &lt;/AdditionalElements&gt;
+                        &lt;Rules&gt;
+                            &lt;Rule Name=&quot;LastTicketDate&quot;&gt;2019-07-27&lt;/Rule&gt;
+                        &lt;/Rules&gt;
+                    &lt;/FlightResult&gt;
+                &lt;/Results&gt;
+            &lt;/AvailabilityRS&gt;
+        &lt;/FlightAvailResponse&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre>
+
+<h1 id="flightcheckavail-if-applicable">FlightCheckAvail (if applicable)</h1>
+<h3 id="request_1">Request</h3>
+<pre><code>## Code
+</code></pre>
+
+<h3 id="response_1">Response</h3>
+<pre><code>## Code
+</code></pre>
+
+<h1 id="flightbookingrules">FlightBookingRules</h1>
+<h3 id="request_2">Request</h3>
+<h3 id="response_2">Response</h3>
+<h1 id="flightbooking">FlightBooking</h1>
+<h3 id="request_3">Request</h3>
+<h3 id="response_3">Response</h3>
+<h1 id="flightticketing">FlightTicketing</h1>
+<h3 id="request_4">Request</h3>
+<h3 id="response_4">Response</h3>
+<h1 id="readbooking">ReadBooking</h1>
+<h3 id="request_5">Request</h3>
+<h3 id="response_5">Response</h3>
+<h1 id="cancelbooking">CancelBooking</h1>
+<h3 id="request_6">Request</h3>
+<h3 id="response_6">Response</h3></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
